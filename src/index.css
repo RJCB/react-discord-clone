@@ -1,3 +1,35 @@
+/*
+    Tailwind wiki: Tailwind is by default mobile-first
+        1=0.25rem / 8=2rem / 32=8rem
+        - className="flex items-center bg-black justify-between py-4 px-6" 1=0.25rem
+            display:flex; align-items:center;background-color:black;justify-content: space-between; padding-top/bot:1rem/16px; padding left/right:1.5rem/24px;
+        - Controlling space between elements(instead of adding margin directly on elements)
+            - space-x-4= |A B C| margin-left: 1rem; //16px adds space between A and B and C ignoring beginning and end
+        - w-32 = width 8rem
+        - h-10 = height 2.5rem
+        - rounded-full = border-radius-100%
+        - text-xs = tailwind text xs styles for small screen
+        - md:text-sm = tailwind text styles for medium screen
+        - hover: = <button hover:text-red> //TW also provides shadow and other default props
+        - transition = <button transition duration-200 ease-in-out> //transition - loads default tailwind transition props
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @layer is a tailwind directive that is required when we want to apply any custom css to our base/components/utilities styles.
+    Here, .link is a class we defined in out components and want elements with that class to have the followinf styles */
+@layer components {
+    .link {
+        @apply font-semibold text-sm text-white hover:underline;
+    }
+
+    .nav-links a {
+        @apply text-base;
+    }
+
+    .homepage-btns {
+        @apply font-medium flex items-center justify-center rounded-full p-4 text-lg hover:shadow-2xl focus:outline-none transition duration-200 ease-in-out;
+    }
+}
