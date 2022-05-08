@@ -32,4 +32,8 @@
     .homepage-btns {
         @apply font-medium flex items-center justify-center rounded-full p-4 text-lg hover:shadow-2xl focus:outline-none transition duration-200 ease-in-out;
     }
+
+    .server-default {
+        @apply h-12 bg-discord_serverBg rounded-full flex justify-center items-center cursor-pointer hover:rounded-2xl transition-all duration-100 ease-out;
+    }
 }
